@@ -244,6 +244,160 @@ h2 {
   background: var(--accent-soft);
 }
 
+/* Intro and contents */
+
+.lede {
+  margin: 1.25rem 0 0;
+  max-width: 36rem;
+}
+
+.toc ul {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.toc a {
+  display: inline-block;
+  padding: 0.625rem 0;
+}
+
+/* Projects, cards and commands */
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+  margin: 0 0 0.5rem;
+}
+
+h3 a {
+  text-decoration: none;
+}
+
+h3 a:hover {
+  text-decoration: underline;
+}
+
+.project + .project {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--faint);
+}
+
+.status {
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.status-label {
+  margin-right: 0.5em;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.also {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--faint);
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.cards {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.25rem 1.5rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.section .card p {
+  margin: 0;
+}
+
+.section .card p + p {
+  margin-top: 0.75rem;
+}
+
+.section .card .meta {
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.dot {
+  margin: 0 0.4em;
+  color: var(--line);
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.875em;
+}
+
+.meta code {
+  color: var(--text);
+}
+
+.cmd {
+  margin: 0 0 1.25rem;
+  padding: 0.875rem 1rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  border-radius: 6px;
+  /* Wrap long commands instead of scrolling the page sideways on phones. */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.cmd code {
+  font-size: 0.9375rem;
+}
+
+/* Keeps a command's argument, or one detail on a card, on one line. */
+.nobr {
+  white-space: nowrap;
+}
+
+/* On the narrowest phones the longest card details don't fit, so let them wrap. */
+@media (max-width: 22.5rem) {
+  .meta .nobr {
+    white-space: normal;
+  }
+}
+
+.card-links a {
+  display: inline-block;
+  padding: 0.25rem 0;
+  font-weight: 500;
+}
+
+@media (max-width: 30rem) {
+  .card {
+    padding: 1.125rem 1.125rem;
+  }
+}
+
 /* Footer */
 
 .footer {
@@ -266,7 +420,7 @@ h2 {
 
 .footer-links a {
   display: inline-block;
-  padding: 0.25rem 0;
+  padding: 0.625rem 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
