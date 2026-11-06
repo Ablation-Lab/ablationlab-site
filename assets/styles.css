@@ -424,3 +424,43 @@ code {
     transition: border-color 120ms ease, background-color 120ms ease;
   }
 }
+
+/* Large screens. Everything above is the phone and tablet layout, which these
+   rules leave untouched. Media queries use em, so they follow the browser's
+   default text size rather than the root size set below. */
+
+@media (min-width: 64em) {
+  .wrap {
+    max-width: 68rem;
+  }
+
+  /* Running text stays at about 70 characters a line, however wide the page. */
+  .tagline,
+  .section p,
+  .section .stat,
+  .section .cmd {
+    max-width: 40rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* A list with one card keeps it at reading width instead of half the grid. */
+  .cards-single {
+    grid-template-columns: minmax(0, 40rem);
+  }
+}
+
+/* Slightly larger text, and with it spacing, on big monitors. */
+@media (min-width: 100em) {
+  html {
+    font-size: 106.25%;
+  }
+}
+
+@media (min-width: 137.5em) {
+  html {
+    font-size: 112.5%;
+  }
+}
