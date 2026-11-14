@@ -8,6 +8,7 @@
   <meta name="theme-color" content="#0B0D10">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="https://ablationlab.org/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
@@ -29,6 +30,39 @@
   <meta name="twitter:description" content="Open research into how AI agents work, review, evolve and communicate with each other, plus the tools built along the way.">
   <meta name="twitter:image" content="https://ablationlab.org/assets/og-image.png">
   <meta name="twitter:image:alt" content="A beaker holding a small network of amber nodes, beside the words Ablation Lab: Open research into how AI agents work, review, evolve and communicate with each other, plus the tools built along the way.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://ablationlab.org/#organization",
+        "name": "Ablation Lab",
+        "url": "https://ablationlab.org/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ablationlab.org/assets/logo-800.png",
+          "width": 800,
+          "height": 800
+        },
+        "description": "Open research into how AI agents work, review, evolve and communicate with each other, plus the tools built along the way.",
+        "sameAs": [
+          "https://www.youtube.com/@AblationLab",
+          "https://github.com/Ablation-Lab"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ablationlab.org/#website",
+        "name": "Ablation Lab",
+        "url": "https://ablationlab.org/",
+        "inLanguage": "en-GB",
+        "publisher": { "@id": "https://ablationlab.org/#organization" }
+      }
+    ]
+  }
+  </script>
 
   <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/styles.css">
