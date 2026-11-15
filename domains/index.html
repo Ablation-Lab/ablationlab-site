@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Domain enquiries</title>
+<style>
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: flex; align-items: center; justify-content: center;
+    background: #fff; color: #555;
+    font: 15px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+    text-align: center; padding: 0 1.5rem; box-sizing: border-box;
+  }
+  .domain { color: #111; font-size: 1.25rem; font-weight: 600; margin: 0 0 .4rem; word-break: break-word; }
+  p { margin: 0; }
+  a { color: inherit; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #111; color: #aaa; }
+    .domain { color: #f2f2f2; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="domain" id="domain"></p>
+  <p>Domain enquiries: <span id="contact"><noscript>enable JavaScript to see the contact address</noscript></span></p>
+</main>
+
+<script>
+  // ---- EDIT THESE TWO LINES ----
+  // The address is split in two so simple spam scrapers reading the page source don't find it.
+  var MAIL_USER = "domains";
+  var MAIL_HOST = "ablationlab.org";
+  // ------------------------------
+
+  // Work out which domain the visitor came for:
+  // 1) ?d=aicreate.cloud in the URL (used when domains are forwarded to one shared page)
+  // 2) otherwise the hostname the page is being served on
+  var fromQuery = new URLSearchParams(location.search).get("d") || "";
+  var domain = (fromQuery || location.hostname || "").toLowerCase().replace(/^www\./, "");
+  if (!/^[a-z0-9.-]{1,80}$/.test(domain)) domain = "";
+
+  document.getElementById("domain").textContent = domain;
+  if (domain) document.title = domain;
+
+  var address = MAIL_USER + "@" + MAIL_HOST;
+  var link = document.createElement("a");
+  link.href = "mailto:" + address + "?subject=" + encodeURIComponent("Enquiry about " + (domain || "a domain"));
+  link.textContent = address;
+  var contact = document.getElementById("contact");
+  contact.textContent = "";
+  contact.appendChild(link);
+</script>
+</body>
+</html>
